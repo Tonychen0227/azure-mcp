@@ -101,7 +101,7 @@ public sealed class DiagramGenerateCommand(ILogger<DiagramGenerateCommand> logge
                 : null;
 
             context.Response.Message = $"Here is the user's mermaid diagram. Please write this into .azure/architecture.copilot.md. Make changes if these do not fulfill requirements:\n ```mermaid\n{chart}\n``` \n"
-                + "Ask user if the topology is expected, if not, you should directly update the generated diagram with the user's updated instructions. Remind the user to install a Mermaid preview extension to be able to render this, or use mermaid.live. "
+                + "Ask user if the topology is expected, if not, you should directly update the generated diagram with the user's updated instructions. Remind the user to install a Mermaid preview extension to be able to render the diagram. "
                 + "Please inform the user that here are the supported hosting technologies: "
                 + $"{string.Join(", ", Enum.GetNames<AzureServiceConstants.AzureComputeServiceType>())}. ";
             if (!string.IsNullOrWhiteSpace(usedServiceTypesString))
